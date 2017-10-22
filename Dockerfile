@@ -10,7 +10,8 @@ RUN yum -y --setopt=tsflags=nodocs update && \
     yum -y install epel-release && \
     yum -y install python34 python34-pip && \
     pip3 install ${ASCIIBINDER_SEARCH_PLUGIN_REPO_URL} && \
-    yum clean all
+    yum clean all && \
+    rm -rf /var/cache/yum
 
 WORKDIR /usr/src/docs
 
